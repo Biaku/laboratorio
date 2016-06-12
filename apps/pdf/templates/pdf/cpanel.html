@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Cargar PDF's</h3>
+<form action="{% url 'pdf:guardar_pdfs' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form_pdf.as_p }}
+    <input type="submit">
+</form>
+<h3>Cargar CSV</h3>
+<form action="{% url 'pdf:guardar_csv' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form_csv.as_p }}
+    <input type="submit">
+</form>
+</body>
+</html>
